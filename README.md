@@ -32,3 +32,11 @@ Every phase is documented with what I built, what I learned, and what broke.
 
 ### Problems I hit
 - Understanding the relationship between Linux system configuration and user management, interpreting account attributes and distinguishing betwwen privileged system accounts and service accounts.
+
+### Lab 4 - Users, groups and sudo
+- Created a test user and a group, added the user with `usermod -aG`
+- Shared folder `/srv/shared` with mode 770: root owns it, the `developers`
+  group has full access, others have none
+- A user outside the `sudo` group gets "not in the sudoers file"; after adding
+  them to `sudo`, they can run commands as root with their own password
+- Lesson: least privilege. Access comes from group membership, and sudo use is logged
